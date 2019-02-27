@@ -1,0 +1,134 @@
+<div class="container">
+    <div class="card card-register mx-auto mt-5">
+        <div class="card-header">Cadastre-se sua Conta</div>
+        <div class="card-body">
+            <form [formGroup]="registerForm" (submit)="register()">
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input formControlName="name" type="text" id="firstName" class="form-control" placeholder="First name" autofocus="autofocus">
+                                <label for="firstName">Nome</label>
+                            </div>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('name').errors?.required" 
+                                text="* Campo Obrigatório.">
+                            </app-helper-text>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('name').errors?.minlength" 
+                                text="O comprimento mínimo é de 2 caracteres">
+                            </app-helper-text>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('name').errors?.maxlength" 
+                                text="O comprimento máximo é de 18 caracteres">
+                            </app-helper-text>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input formControlName="lastname" type="text" id="lastName" class="form-control" placeholder="Last name">
+                                <label for="lastName">Sobrenome</label>
+                            </div>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('lastname').errors?.required" 
+                                text="* Campo Obrigatório.">
+                            </app-helper-text>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('lastname').errors?.minlength" 
+                                text="O comprimento mínimo é de 2 caracteres">
+                            </app-helper-text>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('lastname').errors?.maxlength" 
+                                text="O comprimento máximo é de 40 caracteres">
+                            </app-helper-text>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Email address">
+                        <label for="inputEmail">Email</label>
+                    </div>
+                    <app-helper-text
+                        class="text-muted text-right"
+                        *ngIf="registerForm.get('email').errors?.required" 
+                        text="* Campo Obrigatório.">
+                    </app-helper-text>
+                    <app-helper-text
+                        class="text-muted text-right"
+                        *ngIf="registerForm.get('email').errors?.email" 
+                        text="O formato de email é inválido.">
+                    </app-helper-text>
+                    <app-helper-text
+                        class="text-muted text-right"
+                        *ngIf="registerForm.get('email').errors?.lowerCase" 
+                        text="Deve ser minúscula">
+                    </app-helper-text>
+                    <app-helper-text
+                        class="text-muted text-right"
+                        *ngIf="registerForm.get('email').errors?.emailTaken" 
+                        text="este email não está disponível">
+                    </app-helper-text>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password">
+                                <label for="inputPassword">Senha</label>
+                            </div>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('password').errors?.required" 
+                                text="* Campo Obrigatório.">
+                            </app-helper-text>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('password').errors?.minlength" 
+                                text="O comprimento mínimo é de 8 caracteres.">
+                            </app-helper-text>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('password').errors?.maxlength" 
+                                text="O comprimento máximo é de 16 caracteres.">
+                            </app-helper-text>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input formControlName="passwordConfirm" type="password" id="confirmPassword" class="form-control" placeholder="Confirm password">
+                                <label for="confirmPassword">Confirma sua senha</label>
+                            </div>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('passwordConfirm').errors?.required" 
+                                text="* Campo Obrigatório.">
+                            </app-helper-text>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('passwordConfirm').errors?.minlength" 
+                                text="O comprimento mínimo é de 8 caracteres.">
+                            </app-helper-text>
+                            <app-helper-text
+                                class="text-muted text-right"
+                                *ngIf="registerForm.get('passwordConfirm').errors?.maxlength" 
+                                text="O comprimento máximo é de 16 caracteres.">
+                            </app-helper-text>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block" [disabled]="registerForm.invalid">Registre-se</button>
+            </form>
+            <div class="text-center">
+                <a class="d-block small mt-3" href="login.html">Página de Login</a>
+                <a class="d-block small" href="forgot-password.html">Esqueceu sua Senha?</a>
+            </div>
+        </div>
+    </div>
+</div>

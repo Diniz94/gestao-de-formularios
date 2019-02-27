@@ -1,0 +1,17 @@
+/**
+ * _mixins
+ * 
+ * Description: Custom mixins
+ * Created at: 2019-02-17
+ * Author: Rafael Marinho
+ * Base:
+ */
+
+ /* Border Radius */
+ @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+ }
+  
