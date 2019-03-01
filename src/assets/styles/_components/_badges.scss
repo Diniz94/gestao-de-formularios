@@ -1,0 +1,23 @@
+/**
+ * _badge
+ * 
+ * Description: Custom badge component
+ * Created at: 2019-02-17
+ * Author: Rafael Marinho
+ * Base: Bootstrap@4.1.3
+ */
+
+@import '~node_modules/bootstrap/scss/functions',
+        '~node_modules/bootstrap/scss/variables';
+
+.cst-badge{
+    &-light{
+        background-color: $gray-200;
+    }
+    &-warning{
+        background-color: lighten($yellow, $amount: 30);
+    }
+    &-success{
+        background-color: lighten($green, $amount: 30);
+    }
+}

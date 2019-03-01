@@ -1,0 +1,16 @@
+@import '../../../../assets/styles/_components/inputs';
+@import '../../../../assets/styles/_base/variables';
+
+h4 {
+	font-size: 18px;
+    font-weight: 300;
+    color: #555;
+    line-height: 26px;
+    padding: 10px 0;
+}
+
+.f1-buttons { text-align: right; }
+
+.btn-orange{
+    background: $orange;
+}
